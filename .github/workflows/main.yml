@@ -19,11 +19,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
 
-      - name: Install packages
+      - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-
+        
+      - name: Install packages
+        run: pnpm install
+        
       - name: Build project
         run: pnpm build
 
